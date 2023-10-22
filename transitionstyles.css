@@ -1,0 +1,47 @@
+/* CSS (transitionstyles.css) */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .transition {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url('Screenshot 2023-10-22 223332.png'); /* Background image for the transition */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('diwalipic.jpg'); /* Replace with the actual image URL */
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    transform: translateX(0); /* Initial transformation to hide the curtains */
+    transition: transform 1s;
+  }
+  
+  .curtain.left {
+    left: 0;
+  }
+  
+  .curtain.right {
+    right: 0;
+  }
+  
+  /* Apply animation to the curtains */
+  .transition.clicked .curtain.left {
+    transform: translateX(-100%); /* Move the left curtain to the left */
+  }
+  
+  .transition.clicked .curtain.right {
+    transform: translateX(100%); /* Move the right curtain to the right */
+  }
+  

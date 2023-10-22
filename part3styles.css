@@ -1,0 +1,233 @@
+/* Reset default margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('84298.gif');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: scroll; /* Add vertical scroll */
+  }
+    
+    .part2-content {
+      width: 100%; /* Adjust the width as needed */
+      max-width: none;
+      height: 100%;
+      background-color: rgba(255, 177, 99, 0);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      overflow: auto;
+      /* Add your custom styles for the container content here */
+    }
+
+   
+  
+  .objects {
+      position: absolute;
+    }
+    
+    .right-objects {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      animation: moveUpAndDown 10s linear infinite; /* Adjust duration for slower movement */
+    }
+    
+    .left-objects {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      animation: moveUpAndDownReverse 10s linear infinite; /* Use the same duration as right objects */
+    }
+  
+  
+    @keyframes moveUpAndDown {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(100vh); /* Move up to hide objects completely */
+      }
+    }
+    
+    @keyframes moveUpAndDownReverse {
+      0% {
+        transform: translateY(100vh); /* Start at the bottom of the page */
+      }
+      100% {
+        transform: translateY(0); /* Move to the top of the page */
+      }
+    }
+  
+    .right-objects img,
+  .left-objects img {
+    width: 30px; /* Adjust the width as needed */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block;
+    margin: 30px auto; /* Add margin to separate images vertically */
+  }
+  
+  html, body {
+      height: 100%;
+      margin: 0;
+    }
+  
+  
+    .container {
+      width: 100%; /* Set the width to 100% of its parent's width */
+      max-width: none; /* Remove the max-width constraint */
+      /* ... (Other styles for the container) */
+  }
+  
+  
+    
+    /* Apply the dancing animation to the images inside .gif-item */
+    .gif-item img {
+      width: 200px; /* Adjust the width as needed */
+      height: auto;
+      display: block;
+      margin: 20px auto; /* Add margin to separate images vertically */
+    }
+  
+    .image1 {
+      animation: animation1 3s infinite; /* Adjust animation duration and properties as needed */
+    }
+  
+    .image2 {
+      animation: animation2 4s infinite; /* Adjust animation duration and properties as needed */
+    }
+  
+    @keyframes animation1 {
+      0% {
+        transform: scale(1) rotate(0deg); /* Initial scale and rotation */
+      }
+      25% {
+        transform: scale(1.1) rotate(10deg); /* Scale and rotate */
+      }
+      50% {
+        transform: scale(1) rotate(0deg); /* Back to the initial position */
+      }
+      75% {
+        transform: scale(1.1) rotate(-10deg); /* Scale and rotate in the opposite direction */
+      }
+      100% {
+        transform: scale(1) rotate(0deg); /* Back to the initial position */
+      }
+    }
+  
+    @keyframes animation2 {
+      0% {
+        transform: scale(-1) rotate(0deg); /* Initial scale and rotation */
+      }
+      25% {
+        transform: scale(1.1) rotate(10deg); /* Scale and rotate */
+      }
+      50% {
+        transform: scale(1) rotate(0deg); /* Back to the initial position */
+      }
+      75% {
+        transform: scale(1.1) rotate(-10deg); /* Scale and rotate in the opposite direction */
+      }
+      100% {
+        transform: scale(1) rotate(0deg); /* Back to the initial position */
+      }
+    }
+  
+  
+    .slideshow-container {
+      position: relative;
+      max-width: 200px; /* Adjust the max-width as needed */
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .mySlides {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+  
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #92df16;
+        text-align: center;
+        animation: footerAnimation 2s infinite alternate;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    
+    .footer a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffffff00;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 10px; /* Add margin to separate the WhatsApp link from the border */
+    }
+    
+    .footer a:hover {
+        background-color: #000;
+    }
+    
+    
+    @keyframes footerAnimation {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px); /* Adjust the distance you want to move up */
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+  
+    /* Add this CSS to create the rainbow text gradient */
+  @keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+  }
+  
+  .rainbow-text {
+    margin-top: 200px;
+    font-size: 2em;
+    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 200% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: moveGradient 1s linear infinite;
+  }
+  
+  .rainbow-text {
+    background-image: linear-gradient(45deg, #f06, #28f, #0b0, #e43);
+    background-size: 200% 200%;
+    animation: rainbow 1s linear infinite;
+  }
+  
+  @keyframes rainbow {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+  }
