@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Parse the URL to get the name parameter
   const urlParams = new URLSearchParams(window.location.search);
   const userName = urlParams.get("name");
 
-  // Set the user's name as the value of the footer input field
-  const nameInput = document.getElementById("name-input");
+  // Update the H1 header with the user's name if available
+  const usernameElement = document.getElementById("username");
   if (userName) {
-    nameInput.value = decodeURIComponent(userName);
+    usernameElement.textContent = userName;
   }
 });
+
+
 
 let slideIndex = 0;
 
@@ -29,19 +32,6 @@ function showSlides() {
 }
 
 showSlides();
-
-document.addEventListener("DOMContentLoaded", function () {
-  const params = new URLSearchParams(window.location.search);
-  const name = params.get("name");
-  const displayName = document.getElementById("display-name");
-  const whatsappButton = document.getElementById("whatsapp-button");
-
-  if (name) {
-    displayName.textContent = decodeURIComponent(name);
-    whatsappButton.href = `whatsapp://send?text=Check out our Diwali website: [your website URL] ${encodeURIComponent(name)}`;
-  }
-});
-
 
 function shareOnWhatsApp() {
   // Get the user's name from the H1 element
